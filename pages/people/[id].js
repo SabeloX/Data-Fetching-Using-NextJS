@@ -23,7 +23,7 @@ export const getStaticProps = async (context) => {
     }
 }
 
-export default ({ person }) => {
+const Person = ({ person }) => {
     return (
         <div>
             <h1>{person.name}</h1>
@@ -33,3 +33,5 @@ export default ({ person }) => {
         </div>
     )
 }
+
+export default Person;

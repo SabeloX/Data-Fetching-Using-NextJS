@@ -2,7 +2,7 @@ import Link from "next/link"
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
-export default () => {
+const NotFound = () => {
     const router = useRouter();
 
     useEffect(() => {
@@ -18,3 +18,5 @@ export default () => {
         </div>
     )
 }
+
+export default NotFound;

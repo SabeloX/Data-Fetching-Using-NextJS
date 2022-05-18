@@ -2,7 +2,7 @@ import Head from "next/head"
 import { Footer } from "../components/footer"
 import { Navbar } from "../components/navbar"
 
-export default () => {
+const About = () => {
     return (
         <>
             <Head>
@@ -19,3 +19,5 @@ export default () => {
         </>
     )
 }
+
+export default About;
