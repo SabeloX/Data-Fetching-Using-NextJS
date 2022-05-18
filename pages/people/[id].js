@@ -12,10 +12,24 @@ export const getStaticPaths = async () => {
     }
 }
 
+export const getStaticProps = async (context) => {
+    const id = context.params.id;
+    const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+    const data = await res.json();
+    return {
+        props: {
+            person: data
+        }
+    }
+}
+
 export default ({ person }) => {
     return (
         <div>
-            <h1>Person Details</h1>
+            <h1>{person.name}</h1>
+            <p>Email: {person.email}</p>
+            <p>Website: {person.website}</p>
+            <p>City: {person.address.city}</p>
         </div>
     )
 }
