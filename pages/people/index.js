@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "../../styles/People.module.css";
 
 export const getStaticProps = async () => {
@@ -14,11 +15,11 @@ export default ({ people }) => {
             <h1>This is the root for people</h1>
             {
                 people.map(person => (
-                    <a className={styles.single}>
-                        <div key={person.id}>
+                    <Link href={`/people/${person.id}`} key={person.id}>
+                        <a className={styles.single}>
                             <h3>{person.name}</h3>
-                        </div>
-                    </a>
+                        </a>
+                    </Link>
                 ))
             }
         </div>
